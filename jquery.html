@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Petite Tomate</title>
+    
+    <link rel="stylesheet" type="text/css" href="assets/css/jquery.css">
+</head>
+
+    <body>
+       <div class="titre"><center><em><h1>Pomodoro</h1></em></center></div>
+       <div class="pomodoro">
+        <center> 
+            <h1><p id="minutes">5</p>
+            <p id="secondes"></p></h1>
+            <button id="start">C'est parti!</button>
+            <button id="pause">Pause</button>
+            <button id="reset">On recommence!</button>
+        </center>
+       </div>
+
+   </body>
+
+   <script src="assets/js/jquery-3.2.1.js"></script>
+
+   <script>
+
+   $(document).ready(function() {
+        var secondes = 60;
+        var minutes = 5;
+        $("#start").click(function() {
+             var time = setInterval(function() {
+                  if ( secondes <0 ) {
+                     minutes --;
+                  secondes= 59;
+                  };
+                  var time = 0
+                secondes--;
+              $("#secondes").html(secondes + " s");
+            }, 1000);
+        
+            $("#pause").click(function() {
+                clearInterval(time);
+                secondes;
+                $("#secondes").html(secondes + " s");
+            });
+            $("#reset").click(function() {
+                clearInterval(time);
+                secondes = 60;
+                $("#secondes").html(secondes + " s");
+            });
+        });
+        $("#start").click(function() {
+            var time = setInterval(function() {
+                minutes--;
+                $("#minutes").html(minutes + " m");
+            }, 60000);
+            $("#pause").click(function() {
+                clearInterval(time);
+                minutes;
+                $("#minutes").html(minutes + " m");
+            });
+            $("#reset").click(function() {
+                clearInterval(time);
+                minutes = 5;
+                $("#minutes").html(minutes + " m");
+                
+             
+            });
+        });
+    });
+    
+</script>
+
+</html>

@@ -1,0 +1,14 @@
+body {
+    background-color: black;
+    background-image: url(tomate.png);
+   background-repeat: no-repeat;
+   background-attachment: fixed ;
+   background-position: center;
+}
+
+
+
+.titre{
+    color: white;
+    margin-top: 210px;
+}
